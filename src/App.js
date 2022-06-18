@@ -61,7 +61,6 @@ class App extends React.Component {
     if (cookies.get("user") === undefined) {
       var userid = Math.floor(Math.random() * 999999999);
       cookies.set("user", userid);
-      console.log(cookies.get("user"));
     }
     this.setState({
       userToken: cookies.get("user"),

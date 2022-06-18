@@ -2,21 +2,22 @@ import axios from "axios";
 const url = "http://18.224.200.47";
 const reviews_url = 'http://18.237.237.199:3000';
 const questionsUrl="http://18.208.240.168:3000";
+const productsUrl="http://54.86.159.228:3000";
 
 const getProductList = () => {
-  return axios.get(`${url}/products`);
+  return axios.get(`${productsUrl}/products`);
 };
 
 const getProductInfo = (id = 1) => {
-  return axios.get(`${url}/products/${id}`);
+  return axios.get(`${productsUrl}/products/${id}`);
 };
 
 const getProductStyles = (id = 1) => {
-  return axios.get(`${url}/products/${id}/styles`);
+  return axios.get(`${productsUrl}/products/${id}/styles`);
 };
 
 const getRelatedProducts = (id = 1) => {
-  return axios.get(`${url}/products/${id}/related`);
+  return axios.get(`${productsUrl}/products/${id}/related`);
 };
 
 const getQA = (id = 1) => {

@@ -47,7 +47,6 @@ class RatingsReviews extends React.Component {
   }
 
   getRatings(reviewsArray) {
-    console.log('what the reviews?', reviewsArray);
     return reviewsArray.map((review) => {
       return review.rating;
     });
