@@ -22,10 +22,10 @@ class RatingsReviews extends React.Component {
       apiMaster
         .getReviewsOfProduct(this.props.currentProductID, 20)
         .then(({ data }) => {
-          let ratings = this.getRatings(data.results);
-          let recommend = this.getRecommendation(data.results);
+          let ratings = this.getRatings(data);
+          let recommend = this.getRecommendation(data);
           this.setState({
-            reviews: data.results,
+            reviews: data,
             currentProductRatings: ratings,
             recommendProduct: recommend,
           });
@@ -36,7 +36,18 @@ class RatingsReviews extends React.Component {
     }
   }
 
+  componentDidMount() {
+    apiMaster.getReviewsOfProduct(this.props.currentProductID, 20)
+    .then( ({ data }) => {
+        this.setState({
+          reviews: data,
+        })
+      })
+      .catch(err => console.log('there was an error here', err));
+  }
+
   getRatings(reviewsArray) {
+    console.log('what the reviews?', reviewsArray);
     return reviewsArray.map((review) => {
       return review.rating;
     });

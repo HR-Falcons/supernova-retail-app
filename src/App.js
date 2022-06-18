@@ -13,10 +13,6 @@ import QuestionsAndAnswers from "./components/questions-and-answers/questionsAnd
 import RatingsReviews from "./components/ratings-and-reviews/ratingsReviews";
 import Footer from "./components/related-items-creation/footer";
 
-// apiMaster.getReviewsOfProduct(1)
-//   .then(res => console.log('yo look at my reviews!', res))
-//   .catch(err => console.error('this didnt work', err))
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -39,14 +35,10 @@ class App extends React.Component {
     this.startListening();
     let promises = [];
     promises.push(
-      apiMaster.getProductInfo().then(({ data }) => ({
-        data,
-      }))
+      apiMaster.getProductInfo()
     );
     promises.push(
-      apiMaster.getReviewMetaData().then(({ data }) => ({
-        data,
-      }))
+      apiMaster.getReviewMetaData()
     );
     Promise.all(promises)
       .then((resolvedData) => {

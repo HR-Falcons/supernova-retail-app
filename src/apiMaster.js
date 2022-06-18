@@ -1,10 +1,7 @@
 import axios from "axios";
 const url = "http://18.224.200.47";
-<<<<<<< HEAD
 const reviews_url = 'http://18.237.237.199:3000';
-=======
 const questionsUrl="http://18.208.240.168:3000";
->>>>>>> master
 
 const getProductList = () => {
   return axios.get(`${url}/products`);
@@ -32,7 +29,7 @@ const getReviewMetaData = (id = 1) => {
 
 const getReviewsOfProduct = (id = 1, sortString = "relevant", count = 20) => {
   return axios.get(
-    `${reviews_url}/reviews?product_id=${id}&count=${count}`
+    `${reviews_url}/reviews?product_id=${37316}&count=${count}`
   );
 };
 
